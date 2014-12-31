@@ -18,10 +18,11 @@ In `pg_hba.conf`:
 
     host    all             all             0.0.0.0/0               md5
 
-Then set the first user and password for Postgres in `default_user.sh`:
+Then set the first user, password and DB for Postgres in `default_user.sh`:
 
     USER="docker"
     PASS="docker"
+    DB="docker"
 
 
 Step 1 (Build containers)
@@ -52,7 +53,7 @@ running a new one like this:
 
 And then inside the container (docker is the default user, change it if you want):
 
-     $ psql -h $DB_PORT_5432_TCP_ADDR -U docker
+    $ psql -h $DB_PORT_5432_TCP_ADDR -U docker
 
 
 
